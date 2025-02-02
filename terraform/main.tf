@@ -18,6 +18,8 @@ provider "yandex" {
   zone                     = var.zone
 }
 
-
-
-
+resource "yandex_storage_bucket" "bucket" {
+  bucket = var.bucket_name
+  acl    = "private"
+  max_size = 50 * 1024 * 1024 * 1024
+}
